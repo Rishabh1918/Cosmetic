@@ -81,7 +81,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
         key={paymentSession.id}
         value={paymentSession.provider_id}
       >
-        <div className="form-check flex justify-start gap-3">
+        <div className="form-check flex justify-start gap-3 border px-3 py-4 border-orange-600 border-opacity-40">
           <input
             id="card"
             className="form-check-input"
@@ -90,14 +90,15 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
             disabled={disabled}
             onClick={() => handleRadioClick(paymentSession.provider_id)}
           />
-          <label className="form-check-label" htmlFor="card">
+          <label className="form-check-label flex items-center justify-between w-full" htmlFor="card">
             <span className="font-semibold">Add Debit/Credit/ATM Card</span>
+            <img src="https://ik.imagekit.io/dp5g6xsts/Visa-Mastercard-Rupay.jpg?updatedAt=1713516414154" alt="" className="h-14 w-48 ml-40"/>
             <br />
             {/* Insert image tags with Tailwind CSS classes here */}
           </label>
         </div>
 
-        <div className="form-check mt-6 flex justify-start gap-3">
+        <div className="form-check mt-6 flex justify-start gap-3 border px-3 py-4 border-orange-600 border-opacity-40">
           <input
             id="upi"
             className="form-check-input"
@@ -106,12 +107,13 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
             disabled={disabled}
             onClick={() => handleUpiRadioClick(paymentSession.provider_id)}
           />
-          <label className="form-check-label" htmlFor="upi">
+          <label className="form-check-label flex items-center justify-between w-full" htmlFor="upi">
             <span className="font-semibold">UPI</span>
+            <img src="https://ik.imagekit.io/dp5g6xsts/UPI-apps-india.jpg?updatedAt=1713516414228" alt="" className="h-14 w-48 mr-5"/>
           </label>
         </div>
 
-        <div className="form-check mt-6 flex justify-start gap-3">
+        <div className="form-check mt-6 flex justify-start gap-3 border px-3 py-4 border-orange-600 border-opacity-40">
           <input
             id="cod"
             className="form-check-input"
@@ -143,15 +145,17 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
                 id="cardName"
                 type="text"
                 name="cardName"
+                placeholder="Enter Your Name"
                 value={cardDetails.cardName}
                 onChange={handleInputChange}
-                className="w-full border-gray-300 rounded-md px-3 py-2 mb-4"
+                className="w-full border-sky-300 rounded-md px-3 py-2 mb-4"
               />
               <label className="block mb-2" htmlFor="cardNumber">Card Number:</label>
               <input
                 id="cardNumber"
                 type="text"
                 name="cardNumber"
+                placeholder="1234 5678 9101 1121"
                 value={cardDetails.cardNumber}
                 onChange={handleInputChange}
                 className="w-full border-gray-300 rounded-md px-3 py-2 mb-4"
@@ -161,6 +165,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
                 id="cvv"
                 type="text"
                 name="cvv"
+                placeholder="***"
                 value={cardDetails.cvv}
                 onChange={handleInputChange}
                 className="w-full border-gray-300 rounded-md px-3 py-2 mb-4"
@@ -170,6 +175,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
                 id="expiryDate"
                 type="text"
                 name="expiryDate"
+                placeholder="MM/YY"
                 value={cardDetails.expiryDate}
                 onChange={handleInputChange}
                 className="w-full border-gray-300 rounded-md px-3 py-2 mb-4"
